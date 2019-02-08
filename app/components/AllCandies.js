@@ -50,6 +50,6 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const connectedAllCandiesComponent = connect(mapStateToProps, mapDispatchToProps)(AllCandies)
+const ConnectedAllCandiesComponent = connect(mapStateToProps, mapDispatchToProps)(AllCandies)
 
-export default connectedAllCandiesComponent
+export default ConnectedAllCandiesComponent

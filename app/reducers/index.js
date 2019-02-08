@@ -1,13 +1,16 @@
-import {GET_CANDIES} from '../action-creators'
+import {GET_CANDIES, GET_ONE_CANDY} from '../action-creators'
 
 const initialState = {
-  candies: []
+  candies: [],
+  selectedCandy: {}
 }
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_CANDIES:
       return { candies: [action.candies]}
+    case GET_ONE_CANDY:
+      return   {...state, selectedCandy: action.candy}
     default:
       return state
   }
