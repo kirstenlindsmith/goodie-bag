@@ -8,20 +8,23 @@ class AllCandies extends Component{
   componentDidMount(){
     this.props.loadCandies()
   }
-///nothing
+
   render(){
     const {allCandies} = this.props
-console.log(allCandies)
+    let candies;
+    if (allCandies.length){
+      candies = allCandies[0]
+    } else candies = []
+    
     return (
       <div>
+        <Link to={'/'}>Close the bag</Link>
         <ul>
         {
-          allCandies.map(candy => {
-            console.log('CANDY!!!', candy)
+          candies.map(candy => {
             return (
                 <li key={candy.id}>
-                  {/* <Link to={'/candies/' + candy.id}>{candy.name}</Link> */}
-                  {candy.name}
+                  <Link to={'/candies/' + candy.id}>{candy.name}</Link>
                 </li>
             )
           })
