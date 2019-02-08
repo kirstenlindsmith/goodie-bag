@@ -8,7 +8,7 @@ class AllCandies extends Component{
   componentDidMount(){
     this.props.loadCandies()
   }
-
+///nothing
   render(){
     const {allCandies} = this.props
 console.log(allCandies)
