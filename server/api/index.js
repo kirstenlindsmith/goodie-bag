@@ -2,6 +2,10 @@
 
 const router = require('express').Router()
 const Candy = require('../db/models/Candy')
+const bodyParser = require('body-parser')
+
+router.use(bodyParser.json())
+router.use(bodyParser.urlencoded({ extended: false }))
 
 // Your routes go here!
 // NOTE: Any routes that you put here are ALREADY mounted on `/api`
@@ -25,6 +29,17 @@ router.get('/candies', async (req, res, next) => {
   try {
     const candies = await Candy.findAll()
     res.json(candies)
+  }
+  catch (err){
+    console.error(err)
+    next(err)
+  }
+})
+
+router.post('/', async (req, res, next) => {
+  try {
+    const candy = await Candy.create(req.body)
+    res.redirect(`candies/${candy.id}`)
   }
   catch (err){
     console.error(err)

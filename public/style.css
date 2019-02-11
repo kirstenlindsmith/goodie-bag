@@ -42,3 +42,29 @@ h1 {
   flex-direction: column;
   justify-content: center;
 }
+
+p {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#navList li{
+  display: inline-flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-between;
+  color: white;
+}
+
+#navList a {
+  color: white;
+}
+
+a {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

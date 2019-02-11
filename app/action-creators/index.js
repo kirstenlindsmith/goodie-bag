@@ -3,6 +3,7 @@ import Axios from 'axios'
 //action types
 export const GET_CANDIES = 'GET_CANDIES'
 export const GET_ONE_CANDY = 'GET_ONE_CANDY'
+export const POST_CANDY = 'POST_CANDY'
 
 //regular action creators
 export const loadCandies = (candies) => {
@@ -39,3 +40,5 @@ export const getOneCandyFromServer = (candyId) => {
     catch (err) {console.error(err)}
   }
 }
+
+// export const postCandyToServer = ()

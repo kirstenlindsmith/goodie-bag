@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {getOneCandyFromServer} from '../action-creators'
+import {Link} from 'react-router-dom'
 
 class SingleCandy extends Component{
   
@@ -9,13 +10,15 @@ class SingleCandy extends Component{
   }
   
   render(){
-    const candyId = this.props.candy.id
-    const candyName = this.props.candy.name
-    const candyDescription = this.props.candy.candyDescription
-    const candyImage = this.props.candy.imageUrl
+    const candy = this.props.candy
     
+    const candyName = candy.name
+    const candyDescription = candy.description
+    const candyImage = candy.imageUrl
+
     return (
       <div>
+      <Link to={'/candies'}>Back to the Goodie Bag</Link>
         <h1>{candyName}</h1>
         <p>{candyDescription}</p>
         <div>
@@ -24,7 +27,7 @@ class SingleCandy extends Component{
       </div>
     )
   }
-  
+
 }
 
 const mapStateToProps = (state) => {

@@ -8,7 +8,7 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_CANDIES:
-      return { candies: [action.candies]}
+      return { ...state, candies: [...action.candies]}
     case GET_ONE_CANDY:
       return   {...state, selectedCandy: action.candy}
     default:

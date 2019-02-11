@@ -1,6 +1,7 @@
 import React from 'react'
 import AllCandies from './AllCandies'
 import SingleCandy from './SingleCandy'
+import AddCandy from './addCandy'
 import {HashRouter as Router, Route, Switch, Link} from 'react-router-dom'
 
 const Root = () => {
@@ -8,17 +9,21 @@ const Root = () => {
     <Router>
       <div>
         <nav>
-        <Link to={'/'}>Home</Link> / 
-        <Link to={'/candies'}>Goodie Bag</Link>
+        <ul id="navList">
+          <li><Link to={'/'}>Home</Link></li>
+          <li><Link to={'/candies'}>Goodie Bag</Link></li>
+          <li><Link to={'/candies/add'}>Add A Candy</Link></li>
+        </ul>
+        
         </nav>
         <main>
           <h1>Welcome to the Goodie Bag!</h1>
-          <p>What a nice home page for your goodies!</p>
           <Switch>
             <Route exact path='/candies' component={AllCandies} />
-            <Route exact path='/candies/:candyId' component={SingleCandy} />
+            <Route path='/candies/add' component={AddCandy} />
+            <Route path='/candies/:candyId' component={SingleCandy} />
             <Link to={'/candies'}>Look inside the bag</Link>
-          </Switch>
+          </Switch>  
         </main>
       </div>
     </Router>
